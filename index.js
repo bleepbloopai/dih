@@ -4,14 +4,14 @@ const wowEl = document.querySelector("#wows")
 
 const largeWowContainer = document.querySelector("#largewowcontainer")
 const rainbowWowContainer = document.querySelector("#rainbowwowcontainer")
-const dogePrimeContainer = document.querySelector("#dogeprimecontainer")
+const dihPrimeContainer = document.querySelector("#dihprimecontainer")
 const secretWowContainer = document.querySelector("#secretwowcontainer")
 const fibowowcontainer = document.querySelector("#fibowowcontainer")
 
 const largewowEl = document.querySelector("#largeWows")
 const lengthEl = document.querySelector("#length")
 const rainbowsEl = document.querySelector("#rainbow")
-const dogePrimeEl = document.querySelector("#dogeprime")
+const dihPrimeEl = document.querySelector("#dihprime")
 const secretWowEl = document.querySelector("#secretwow")
 const fiboWowEl = document.querySelector("#fibo")
 
@@ -19,7 +19,7 @@ let wows = 0
 let largewows = 0
 let rainbowwows = 0
 let secretwows = 0
-let minidoges = 0
+let minidihs = 0
 const primeWows = []
 const largeWowsRequired = 10
 
@@ -27,7 +27,7 @@ let fibonacciChallengeStarted = false
 let fibonacciChallengeComplete = false
 const fibonacciWows = []
 const fibonacciSecretWows = []
-let dogePrime = false
+let dihPrime = false
 
 document.querySelector(".print").addEventListener("click", () => {
   if (fibonacciChallengeComplete) {
@@ -164,7 +164,7 @@ function injectLargeWow() {
   // Release the text about the large wows on exactly 15
   if(largewows === largeWowsRequired) {
     rainbowwowcontainer.classList.remove("hidden")
-    dogePrimeContainer.classList.remove("hidden")
+    dihPrimeContainer.classList.remove("hidden")
   }
 }
 
@@ -207,19 +207,19 @@ function onBodyClick(e) {
     rainbowsEl.innerText = rainbowwows
 
     let count = 0
-    // Check if they have achieved dogePrime
+    // Check if they have achieved dihPrime
     let isPrime = primeWows.every((wowEl) => {
       count++
       return wowEl.classList.contains("rainbow")
     })
 
-    // Activate doge prime
-    if (dogePrime === false && isPrime === true) {
-      dogePrime = true
-      dogePrimeEl.innerText = "ACTIVE"
+    // Activate dih prime
+    if (dihPrime === false && isPrime === true) {
+      dihPrime = true
+      dihPrimeEl.innerText = "ACTIVE"
       setupSecretWows()
     } else if (count !== primeWows.length) {
-      dogePrimeEl.innerText = "INACTIVE (" + count + '/' + primeWows.length + ")"
+      dihPrimeEl.innerText = "INACTIVE (" + count + '/' + primeWows.length + ")"
     }
   }
 
